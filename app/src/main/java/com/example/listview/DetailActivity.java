@@ -18,6 +18,10 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
+
+        //getActionBar().setTitle("Hello world App");
+        //getSupportActionBar().setTitle("Hello world App");
+
         textView1=findViewById(R.id.tv1);
         textView2=findViewById(R.id.tv2);
         textView3=findViewById(R.id.tv3);
@@ -26,10 +30,6 @@ public class DetailActivity extends AppCompatActivity {
         imageView2=findViewById(R.id.img2);
         imageView3=findViewById(R.id.img3);
 
-        String vegs[]={"Carrot","LadyFinger", "Cocumber"};
-        String fruits[]={"Banana", "Apple", "Guava"};
-
-        String drinks[]={"Coca Cola", "Pepsi", "Sprite"};
         ArrayAdapter<String>  arrayAdapter;
 
 
@@ -39,6 +39,8 @@ public class DetailActivity extends AppCompatActivity {
         String pos=i.getStringExtra("position");
         Log.d("tag", "onCreate: "+pos);
         if(pos.compareTo("vegs")==0){
+
+            setTitle("Vegetables List");
             textView1.setText("Carrot");
             textView2.setText("Lady finger");
             textView3.setText("Cocumber");
@@ -48,7 +50,7 @@ public class DetailActivity extends AppCompatActivity {
             imageView3.setImageResource(R.drawable.v3);
         }
         else if(pos.compareTo("fruits")==0){
-
+            setTitle("Fruits List");
             textView1.setText("Banana");
             textView2.setText("Apple");
             textView3.setText("Guava");
@@ -57,6 +59,7 @@ public class DetailActivity extends AppCompatActivity {
             imageView3.setImageResource(R.drawable.f3);
         }
         else if(pos.compareTo("drinks")==0){
+            setTitle("Dinks List");
             textView1.setText("Coca Col");
             textView2.setText("Pepsi");
             textView3.setText("Sprite");
